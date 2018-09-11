@@ -37,7 +37,7 @@ gulp.task('scripts-watch', ['scripts'], browserSync.reload);
 
 gulp.task('scripts-bundle', ['scripts-lint'], function() {
   return gulp.src([
-    //modules + 'vanilla-fitvids/jquery.fitvids.js',
+    modules + 'rangeslider.js/dist/rangeslider.js',
     src + 'js/core.js'
   ])
   .pipe(plugins.concat(project + '.min.js'))

@@ -5,20 +5,23 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="description" content="<?php bloginfo('description'); ?>">
-  <meta name="turbolinks-cache-control" content="no-cache">
   <title><?php wp_title('&mdash;', true, 'right'); bloginfo('name'); ?></title>
-  <link rel="icon" type="image/x-icon" href="/wp-content/themes/workac/images/favicon.png">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <?php get_template_part('svg-defs'); ?>
-  <header class="site-header">
-    <nav class="site-header-nav">
-      <ul>
-        <li class="site-header-nav-work"><a href="/category/architecture/">Work</a></li>
-        <li class="site-header-nav-home"><a href="<?php if (is_front_page()): ?>/featured/<?php else: ?>/<?php endif; ?>">WORK<span class="small"></span></a></li>
-        <li class="site-header-nav-about"><a href="/about/">About</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="slider">
+    <div class="slider-label slider-label-1">EN</div>
+    <input type="range" min="0" max="180" step="1" value="45">
+    <div class="slider-label arabic-text slider-label-2">عربى</div>
+  </div>
+  <div class="logo-container">
+    <div class="flipper flipper-logo">
+      <div class="front">
+        <h1 class="logo logo-english">Ministry of Graphic Design</h1>
+      </div>
+      <div class="back">
+        <h1 class="logo logo-arabic">Ministry of Graphic Design</h1>
+      </div>
+    </div>
+  </div>
   <div class="main">
