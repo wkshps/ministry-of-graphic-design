@@ -12,7 +12,7 @@
   <div class="slider">
     <div class="slider-label slider-label-1">EN</div>
     <input type="range" min="0" max="180" step="1" value="45">
-    <div class="slider-label arabic-text slider-label-2">عربى</div>
+    <div class="slider-label arabic-text slider-label-2">عربي</div>
   </div>
   <div class="logo-container">
     <div class="flipper flipper-logo">
