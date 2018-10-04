@@ -18,6 +18,10 @@ $main-color: #000;
 $main-bg: #fff;
 $accent: #ff3333;
 
+::selection {
+  background: rgba($main-color, .99);
+}
+
 *,
 *::before,
 *::after {
@@ -331,7 +335,13 @@ a {
   }
 
   .page-title {
-    font-size: 3.75rem;
+    font-size: 3.5rem;
+    line-height: 1em;
+  }
+
+  .program-title {
+    margin-top: .2em;
+    font-size: 2.5rem;
     line-height: 1.05em;
   }
 
@@ -439,11 +449,13 @@ a {
 .rangeslider__handle:active, .rangeslider--active .rangeslider__handle {
   cursor: grabbing;
 }
+
 .rangeslider--horizontal .rangeslider__handle {
   top: -.4rem;
   touch-action: pan-y;
   -ms-touch-action: pan-y;
 }
+
 .rangeslider--vertical .rangeslider__handle {
   left: -10px;
   touch-action: pan-x;
@@ -454,17 +466,75 @@ a {
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 5.6rem;
+  height: 5.6rem;
   z-index: 900;
-  padding-top: 1.333rem;
+  padding-top: 1.2rem;
   text-align: center;
   background: $main-color;
   color: $main-bg;
   border-radius: 100%;
+  border: .22em solid $accent;
 
   &:hover {
     color: $main-bg;
     background: $accent;
   }
+}
+
+.schedule {
+  margin: 2em 0;
+
+  @include breakpoint($m-up) {
+    margin: 2em -5em;
+  }
+
+  a {
+    clear: both;
+    display: block;
+    border-top: .05em solid $main-color;
+    background: none;
+    @include clearfix;
+
+    @include breakpoint($s) {
+      padding-bottom: 1em;
+    }
+  }
+
+  div {
+    float: left;
+    margin-right: gutter();
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .schedule-item-date,
+  .schedule-item-time {
+    width: span(6);
+
+    @include breakpoint($m-up) {
+      width: span(2);
+    }
+  }
+
+  .schedule-item-time {
+    @include breakpoint($s) {
+      margin-right: 0;
+    }
+  }
+
+  .schedule-item-title {
+    width: span(12);
+
+    @include breakpoint($m-up) {
+      width: span(8);
+    }
+  }
+}
+
+.program-date,
+.program-time {
+  text-align: center;
 }
