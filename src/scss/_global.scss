@@ -67,10 +67,6 @@ iframe {
 
 a {
   color: $main-color;
-
-  &:hover {
-    color: $accent;
-  }
 }
 
 .flipper-toggle {
@@ -92,6 +88,11 @@ a {
   width: 100vw;
   height: 100vh;
   @include hide-text;
+  transition: opacity .3s;
+
+  .loading & {
+    opacity: 0;
+  }
 
   &.logo-english {
     background: url('images/logo-english.svg') center center no-repeat;
@@ -122,6 +123,11 @@ a {
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
+  transition: opacity .3s;
+
+  .loading & {
+    opacity: 0;
+  }
 
   @include breakpoint($m-up) {
     padding: 5rem 20% 12rem;
@@ -287,4 +293,18 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
   -moz-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
   -webkit-box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
   box-shadow: 0 0 8px rgba(255, 0, 255, 0.9);
+}
+
+.tickets-button {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  z-index: 900;
+  padding-top: 1.333rem;
+  text-align: center;
+  background: $main-color;
+  color: $main-bg;
+  border-radius: 100%;
 }

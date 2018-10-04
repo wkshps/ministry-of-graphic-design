@@ -7,8 +7,36 @@
   <meta name="description" content="<?php bloginfo('description'); ?>">
   <title><?php wp_title('&mdash;', true, 'right'); bloginfo('name'); ?></title>
   <?php wp_head(); ?>
+  <!-- Facebook Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+   fbq('init', '596130974174147');
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+   <img height="1" width="1"
+  src="https://www.facebook.com/tr?id=596130974174147&ev=PageView
+  &noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126808102-1"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', 'UA-126808102-1');
+  </script>
 </head>
 <body <?php body_class(); ?>>
+  <a href="" class="tickets-button"><p class="arabic-text">تذكرة</p><p>Tickets</p></a>
   <div class="slider">
     <div class="slider-label slider-label-1">EN</div>
     <input type="range" min="0" max="180" step="1" value="45">
