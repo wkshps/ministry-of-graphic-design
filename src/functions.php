@@ -14,6 +14,11 @@ add_action('wp_enqueue_scripts', 'fikra_assets');
 
 add_theme_support('post-thumbnails');
 
+function fikra_register_menu() {
+  register_nav_menu('main-menu',__('Main Menu'));
+}
+add_action('init', 'fikra_register_menu');
+
 add_image_size('fikra_small', 800, 800, false);
 add_image_size('fikra_full', 2200, 1600, false);
 add_image_size('fikra_fragment', 1600, 1600, true);

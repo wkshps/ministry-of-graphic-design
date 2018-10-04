@@ -1,21 +1,30 @@
 @font-face {
-    font-family: 'pica10_btroman';
-    src: url('fonts/pica-10-pitch-bt_35620-webfont.eot');
-    src: url('fonts/pica-10-pitch-bt_35620-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/pica-10-pitch-bt_35620-webfont.woff2') format('woff2'),
-         url('fonts/pica-10-pitch-bt_35620-webfont.woff') format('woff'),
-         url('fonts/pica-10-pitch-bt_35620-webfont.ttf') format('truetype'),
-         url('fonts/pica-10-pitch-bt_35620-webfont.svg#pica10_btroman') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'pica10_btroman';
+  src: url('fonts/pica-10-pitch-bt_35620-webfont.eot');
+  src: url('fonts/pica-10-pitch-bt_35620-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/pica-10-pitch-bt_35620-webfont.woff2') format('woff2'),
+       url('fonts/pica-10-pitch-bt_35620-webfont.woff') format('woff'),
+       url('fonts/pica-10-pitch-bt_35620-webfont.ttf') format('truetype'),
+       url('fonts/pica-10-pitch-bt_35620-webfont.svg#pica10_btroman') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Kawkab Mono';
-    src: url('fonts/KawkabMono-Light.eot');
-    src: url('fonts/KawkabMono-Light.eot?#iefix') format('embedded-opentype'),
-         url('fonts/KawkabMono-Light.woff2') format('woff2'),
-         url('fonts/KawkabMono-Light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Kawkab Mono';
+  src: url('fonts/KawkabMono-Light.eot');
+  src: url('fonts/KawkabMono-Light.eot?#iefix') format('embedded-opentype'),
+       url('fonts/KawkabMono-Light.woff2') format('woff2'),
+       url('fonts/KawkabMono-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Friz Quadrata';
+  src: url('fonts/FrizQuadrataStd-Regular.eot');
+  src: url('fonts/FrizQuadrataStd-Regular.eot?#iefix') format('embedded-opentype'),
+       url('fonts/FrizQuadrataStd-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

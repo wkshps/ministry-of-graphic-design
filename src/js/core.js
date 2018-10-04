@@ -1,6 +1,10 @@
-var hasTouch = 'ontouchstart' in window;
+var hasTouch = 'ontouchstart' in window,
+    logo = Math.floor(Math.random() * 11) + 1,
+    scrollPosition = 0;
 
 $(document).ready(function() {
+  $('html').addClass('logo-' + logo);
+
   var rotation = Cookies.get('rotation');
 
   if (rotation != undefined) {
@@ -15,6 +19,16 @@ $(document).ready(function() {
       $('.flipper-content').css('transform', 'rotateY(' + value + 'deg)');
       $('.flipper-logo').css('transform', 'rotateY(' + (value * 3) + 'deg)');
       Cookies.set('rotation', value, { expires: 7 });
+    }
+  });
+
+  $('.main').scroll(function() {
+    scrollPosition = $('.main').scrollTop();
+
+    if (scrollPosition > 10) {
+      $('html').addClass('scrolled');
+    } else {
+      $('html').removeClass('scrolled');
     }
   });
 
