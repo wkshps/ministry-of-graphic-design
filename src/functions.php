@@ -1,7 +1,7 @@
 <?php
 
 function fikra_assets() {
-  $fikra_version = '1.2';
+  $fikra_version = '1.3';
   if (!is_admin()) {
     wp_deregister_script('jquery');
     wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js", null, null, false);
@@ -16,6 +16,7 @@ add_theme_support('post-thumbnails');
 
 function fikra_register_menu() {
   register_nav_menu('main-menu',__('Main Menu'));
+  register_nav_menu('main-menu-arabic',__('Main Menu (Arabic)'));
 }
 add_action('init', 'fikra_register_menu');
 

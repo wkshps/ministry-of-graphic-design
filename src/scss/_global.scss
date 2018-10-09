@@ -215,7 +215,7 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 4rem 10% 12rem;
+  padding: 4rem 5% 12rem;
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
@@ -483,30 +483,51 @@ a {
 }
 
 .schedule {
-  margin: 2em 0;
-
-  @include breakpoint($m-up) {
-    margin: 2em -5em;
-  }
+  margin: 1em 0;
+  @include clearfix;
 
   a {
     clear: both;
     display: block;
     border-top: .05em solid $main-color;
     background: none;
+    padding-bottom: 1em;
     @include clearfix;
 
-    @include breakpoint($s) {
-      padding-bottom: 1em;
+    .grid-view & {
+      border-top: 0;
     }
+  }
+
+  .grid-view & .schedule-item {
+    float: left;
+    width: span(6);
+  }
+
+  .grid-view & .schedule-item:nth-child(odd) {
+    clear: both;
+    margin-right: gutter();
   }
 
   div {
     float: left;
     margin-right: gutter();
 
+    .grid-view & {
+      margin-right: gutter(3 of 6);
+    }
+
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  .schedule-item-image {
+    margin-right: 0 !important;
+    display: none;
+
+    .grid-view & {
+      display: block;
     }
   }
 
@@ -515,7 +536,11 @@ a {
     width: span(6);
 
     @include breakpoint($m-up) {
-      width: span(2);
+      width: span(3);
+
+      .grid-view & {
+        width: span(3 of 6);
+      }
     }
   }
 
@@ -523,18 +548,29 @@ a {
     @include breakpoint($s) {
       margin-right: 0;
     }
+
+    .grid-view & {
+      margin-right: 0;
+    }
   }
 
   .schedule-item-title {
-    width: span(12);
-
-    @include breakpoint($m-up) {
-      width: span(8);
-    }
+    clear: both;
   }
 }
 
 .program-date,
 .program-time {
   text-align: center;
+}
+
+.views {
+  margin-top: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+
+  .active {
+    pointer-events: none;
+    background: none;
+  }
 }

@@ -32,6 +32,20 @@ $(document).ready(function() {
     }
   });
 
+  $('.view').click(function(e) {
+    e.preventDefault();
+
+    $('.view.active').removeClass('active');
+
+    if ($(this).hasClass('view-grid')) {
+      $('html').addClass('grid-view');
+      $('.view-grid').addClass('active');
+    } else {
+      $('html').removeClass('grid-view');
+      $('.view-list').addClass('active');
+    }
+  });
+
   setTimeout(function() {
     $('html').removeClass('loading');
   }, 120);
