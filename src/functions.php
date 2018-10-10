@@ -1,7 +1,7 @@
 <?php
 
 function fikra_assets() {
-  $fikra_version = '1.3';
+  $fikra_version = '1.5';
   if (!is_admin()) {
     wp_deregister_script('jquery');
     wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js", null, null, false);
@@ -36,5 +36,9 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 remove_action('admin_print_scripts', 'print_emoji_detection_script');
 remove_action('admin_print_styles', 'print_emoji_styles');
+
+if (function_exists('acf_add_options_page')) {
+  acf_add_options_page();
+}
 
 ?>

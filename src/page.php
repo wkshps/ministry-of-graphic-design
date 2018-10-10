@@ -61,7 +61,7 @@
           <p><span class="spaced">Sharjah, UAE</span> <span class="spaced">1st edition</span> <span class="spaced">2018</span></p>
           <p>--------------</p>
         <?php if (get_the_title() != 'Home'): ?></a><?php endif; ?>
-        <nav class="site-nav">
+        <!-- <nav class="site-nav">
           <?php
             wp_nav_menu(array(
               'theme_location' => 'main-menu-arabic',
@@ -69,10 +69,10 @@
               'item_spacing' => 'discard'
             ));
           ?>
-        </nav>
+        </nav> -->
       </header>
 
-      <div class="content">
+      <div class="content arabic-text">
         <?php if (get_field('end_date')): ?>
           <?php
             $start_date = new DateTime(get_field('start_date'));

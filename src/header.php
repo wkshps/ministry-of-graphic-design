@@ -36,7 +36,7 @@
   </script>
 </head>
 <body <?php body_class(); ?>>
-  <a href="" class="tickets-button"><p class="arabic-text">تذكرة</p><p>Tickets</p></a>
+  <a href="<?php the_field('tickets_url', 'option'); ?>" class="tickets-button"><p class="arabic-text"><?php the_field('tickets_text_arabic', 'option'); ?></p><p><?php the_field('tickets_text', 'option'); ?></p></a>
   <div class="slider">
     <div class="slider-label slider-label-1">EN</div>
     <input type="range" min="0" max="180" step="1" value="45">
