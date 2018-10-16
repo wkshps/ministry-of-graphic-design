@@ -16,16 +16,20 @@ $xl: min-width 1400px;
 
 $main-color: #000;
 $main-bg: #fff;
-$accent: #ff3333;
+$accent: #ed1c24;
 
 ::selection {
-  background: rgba($main-color, .99);
+  background: $accent;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html, body {
+  overflow: hidden;
 }
 
 html {
@@ -219,7 +223,7 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 4rem 5% 12rem;
+  padding: 12rem 5% 12rem;
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
@@ -231,7 +235,7 @@ a {
   }
 
   @include breakpoint($m-up) {
-    padding: 5rem 20% 12rem;
+    padding: 12rem 20% 12rem;
   }
 }
 
@@ -280,29 +284,53 @@ a {
 }
 
 .site-header {
-  text-align: center;
-  margin-bottom: 8vh;
+  text-transform: uppercase;
 
-  h1 {
-    text-transform: uppercase;
+  a {
+    background: none;
+    color: $accent;
   }
 
-  p.spaced {
-    margin: 1em 0;
+  h1, h2 {
+    position: fixed;
+    width: 50%;
+    z-index: 9999;
   }
 
-  span.spaced {
-    margin: 0 .3em;
+  .title-english {
+    top: 4rem;
+    left: 1rem;
+  }
+
+  .title-arabic {
+    text-align: right;
+    top: 4rem;
+    right: 1rem;
+  }
+
+  .heading-bottom-left {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .heading-bottom-right {
+    text-align: right;
+    right: 1rem;
+    bottom: 1rem;
   }
 }
 
 .site-nav {
-  margin-top: 1.5em;
+  position: fixed;
+  top: 8rem;
+  right: 0;
+  left: 0;
+  z-index: 9999;
   text-transform: uppercase;
+  text-align: center;
 
   @include breakpoint($m-up) {
-    margin-right: -9em;
-    margin-left: -9em;
+    top: 7rem;
   }
 
   li {
@@ -312,6 +340,7 @@ a {
     &.current-menu-item a {
       background: none;
       pointer-events: none;
+      text-decoration: line-through;
     }
   }
 }
@@ -417,6 +446,25 @@ a {
   z-index: 9999;
   padding: .2rem 4rem .2rem 3.5rem;
 
+  .page-id-14 & {
+    color: $main-bg;
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3.25rem;
+    z-index: -1;
+    background: #d8d8d8;
+
+    .page-id-14 & {
+      background: $main-color;
+    }
+  }
+
   .slider-label {
     position: absolute;
     top: 0;
@@ -443,6 +491,10 @@ a {
 .rangeslider {
   background: $main-color;
   position: relative;
+
+  .page-id-14 & {
+    background: $main-bg;
+  }
 }
 
 .rangeslider--horizontal {
@@ -497,21 +549,20 @@ a {
 
 .tickets-button {
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
+  right: 1.5rem;
+  bottom: 3rem;
   width: 5.6rem;
   height: 5.6rem;
   z-index: 900;
-  padding-top: 1.2rem;
-  text-align: center;
-  background: $main-color;
-  color: $main-bg;
-  border-radius: 100%;
-  border: .22em solid $accent;
+  background: url('images/tickets.svg') center center no-repeat;
+  background-size: contain;
+  @include hide-text;
+  transition: transform .1s ease-in-out;
 
   &:hover {
-    color: $main-bg;
-    background: $accent;
+    background: url('images/tickets.svg') center center no-repeat;
+    background-size: contain;
+    transform: scale(1.2);
   }
 }
 

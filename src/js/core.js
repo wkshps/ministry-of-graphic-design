@@ -1,5 +1,5 @@
 var hasTouch = 'ontouchstart' in window,
-    logo = Math.floor(Math.random() * 11) + 1,
+    logo = Math.floor(Math.random() * 6) + 1,
     scrollPosition = 0;
 
 $(document).ready(function() {

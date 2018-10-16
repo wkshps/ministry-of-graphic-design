@@ -1,7 +1,7 @@
 <?php
 
 function fikra_assets() {
-  $fikra_version = '1.5';
+  $fikra_version = '1.6';
   if (!is_admin()) {
     wp_deregister_script('jquery');
     wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js", null, null, false);
