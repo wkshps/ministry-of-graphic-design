@@ -36,7 +36,11 @@ html {
   font-size: 16px;
 
   @include breakpoint($m-up) {
-    font-size: 2vw;
+    font-size: 1.667vw;
+  }
+
+  @include breakpoint($xl) {
+    font-size: 1.4vw;
   }
 }
 
@@ -45,12 +49,12 @@ body {
   color: $main-color;
   font-family: 'pica10_btroman', 'Courier New', monospace;
   font-size: 1rem;
-  line-height: 1.25em;
+  line-height: 1.4em;
   text-size-adjust: none;
   text-rendering: optimizeLegibility;
 
   .arabic-text {
-    font-size: 80%;
+    font-size: 87%;
     font-family: 'Kawkab Mono', 'Courier New', monospace;
     direction: rtl;
 
@@ -75,6 +79,10 @@ video,
 iframe {
   max-width: 100%;
   height: auto;
+}
+
+iframe {
+  height: 60vh !important;
 }
 
 a {
@@ -104,7 +112,7 @@ a {
 .logo {
   width: 100vw;
   height: 100vh;
-  background-position: center center;
+  background-position: center 54%;
   background-repeat: no-repeat;
   background-size: 80% auto;
   @include hide-text;
@@ -204,6 +212,7 @@ a {
 }
 
 .logo-container {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
@@ -215,6 +224,10 @@ a {
   .scrolled & {
     opacity: 0;
   }
+
+  .home & {
+    display: block;
+  }
 }
 
 .main {
@@ -223,7 +236,7 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 12rem 5% 12rem;
+  padding: 12rem 1rem 12rem;
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
@@ -300,12 +313,20 @@ a {
   .title-english {
     top: 4rem;
     left: 1rem;
+
+    @include breakpoint($m-up) {
+      top: 3.4rem;
+    }
   }
 
   .title-arabic {
     text-align: right;
     top: 4rem;
     right: 1rem;
+
+    @include breakpoint($m-up) {
+      top: 3.4rem;
+    }
   }
 
   .heading-bottom-left {
@@ -335,7 +356,8 @@ a {
 
   li {
     display: inline-block;
-    margin: 0 .5em;
+    margin: 0 .75em;
+    white-space: nowrap;
 
     &.current-menu-item a {
       background: none;
@@ -445,9 +467,10 @@ a {
   left: 0;
   z-index: 9999;
   padding: .2rem 4rem .2rem 3.5rem;
+  color: $main-bg;
 
-  .page-id-14 & {
-    color: $main-bg;
+  @include breakpoint($m-up) {
+    padding: 0 4rem 0 3.5rem;
   }
 
   &::before {
@@ -458,10 +481,10 @@ a {
     left: 0;
     height: 3.25rem;
     z-index: -1;
-    background: #d8d8d8;
+    background: $main-color;
 
-    .page-id-14 & {
-      background: $main-color;
+    @include breakpoint($m-up) {
+      height: 2.5rem;
     }
   }
 
@@ -474,11 +497,19 @@ a {
 
   .slider-label-1 {
     left: 1rem;
+
+    @include breakpoint($m-up) {
+      top: -.5rem;
+    }
   }
 
   .slider-label-2 {
     right: 1rem;
     text-align: right;
+
+    @include breakpoint($m-up) {
+      top: -.6rem;
+    }
   }
 }
 
@@ -489,18 +520,18 @@ a {
 }
 
 .rangeslider {
-  background: $main-color;
+  background: $main-bg;
   position: relative;
-
-  .page-id-14 & {
-    background: $main-bg;
-  }
 }
 
 .rangeslider--horizontal {
   margin-top: .3rem;
   height: .2rem;
   width: 100%;
+
+  @include breakpoint($m-up) {
+    margin-top: .1rem;
+  }
 }
 
 .rangeslider--disabled {
@@ -551,8 +582,8 @@ a {
   position: fixed;
   right: 1.5rem;
   bottom: 3rem;
-  width: 5.6rem;
-  height: 5.6rem;
+  width: 7rem;
+  height: 7rem;
   z-index: 900;
   background: url('images/tickets.svg') center center no-repeat;
   background-size: contain;
@@ -663,5 +694,6 @@ hr {
   .active {
     pointer-events: none;
     background: none;
+    text-decoration: line-through;
   }
 }

@@ -54,15 +54,15 @@
   </div>
 
   <header class="site-header">
-    <h1 class="title-english"><a href="/">Fikra Graphic Design Biennial 01</a></h1>
-    <h1 class="title-arabic arabic-text"><a href="/">01 بينالي فكرة للتصميم الجرافيكي</a></h1>
+    <!-- <h1 class="title-english"><a href="/">Fikra Graphic Design Biennial 01</a></h1>
+    <h1 class="title-arabic arabic-text"><a href="/">بينالي فكرة للتصميم الجرافيكي 01</a></h1>
     <h2 class="heading-bottom-left"><a href="/">November 9&ndash;30</a></h2>
-    <h2 class="heading-bottom-right"><a href="/">2018</a></h2>
+    <h2 class="heading-bottom-right"><a href="/">2018</a></h2> -->
 
-    <!-- <h1 class="title-english"><a href="/"><?php the_field('heading_top_left', 'option'); ?></a></h1>
+    <h1 class="title-english"><a href="/"><?php the_field('heading_top_left', 'option'); ?></a></h1>
     <h1 class="title-arabic arabic-text"><a href="/"><?php the_field('heading_top_right', 'option'); ?></a></h1>
     <h2 class="heading-bottom-left"><a href="/"><?php the_field('heading_bottom_left', 'option'); ?></a></h2>
-    <h2 class="heading-bottom-right"><a href="/"><?php the_field('heading_bottom_right', 'option'); ?></a></h2> -->
+    <h2 class="heading-bottom-right"><a href="/"><?php the_field('heading_bottom_right', 'option'); ?></a></h2>
   </header>
 
   <nav class="site-nav">
