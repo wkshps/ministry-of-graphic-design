@@ -7,32 +7,29 @@
   <meta name="description" content="<?php bloginfo('description'); ?>">
   <title><?php wp_title('&mdash;', true, 'right'); bloginfo('name'); ?></title>
   <?php wp_head(); ?>
-  <!-- Facebook Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window,document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-   fbq('init', '596130974174147');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '596130974174147');
+    fbq('track', 'PageView');
   </script>
   <noscript>
-   <img height="1" width="1"
+    <img height="1" width="1"
   src="https://www.facebook.com/tr?id=596130974174147&ev=PageView
   &noscript=1"/>
   </noscript>
-  <!-- End Facebook Pixel Code -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126808102-1"></script>
   <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'UA-126808102-1');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-126808102-1');
   </script>
 </head>
 <body <?php body_class(); ?>>
@@ -54,11 +51,6 @@
   </div>
 
   <header class="site-header">
-    <!-- <h1 class="title-english"><a href="/">Fikra Graphic Design Biennial 01</a></h1>
-    <h1 class="title-arabic arabic-text"><a href="/">بينالي فكرة للتصميم الجرافيكي 01</a></h1>
-    <h2 class="heading-bottom-left"><a href="/">November 9&ndash;30</a></h2>
-    <h2 class="heading-bottom-right"><a href="/">2018</a></h2> -->
-
     <h1 class="title-english"><a href="/"><?php the_field('heading_top_left', 'option'); ?></a></h1>
     <h1 class="title-arabic arabic-text"><a href="/"><?php the_field('heading_top_right', 'option'); ?></a></h1>
     <h2 class="heading-bottom-left"><a href="/"><?php the_field('heading_bottom_left', 'option'); ?></a></h2>
