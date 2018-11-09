@@ -87,18 +87,19 @@ iframe {
 
 a {
   color: $main-color;
-  background-image: linear-gradient(to bottom, $main-color 50%, $main-color 50%);
-  background-repeat: repeat-x;
-  background-size: .05em .05em;
-  background-position: 0 1.05em;
+  //background-image: linear-gradient(to bottom, $main-color 50%, $main-color 50%);
+  //background-repeat: repeat-x;
+  //background-size: .05em .05em;
+  //background-position: 0 1.05em;
+  text-decoration: underline;
 
   &:hover {
     color: $accent;
-    background-image: linear-gradient(to bottom, $accent 50%, $accent 50%);
+    //background-image: linear-gradient(to bottom, $accent 50%, $accent 50%);
   }
 
   &.home-link {
-    background: none;
+    text-decoration: none;
   }
 }
 
@@ -301,6 +302,7 @@ a {
 
   a {
     background: none;
+    text-decoration: none;
     color: $accent;
   }
 
@@ -365,6 +367,50 @@ a {
       text-decoration: line-through;
     }
   }
+
+  @include breakpoint($s) {
+    display: none;
+    top: 0;
+    bottom: 0;
+    background: $main-bg;
+    padding-top: 11rem;
+    overflow: auto;
+
+    .site-nav-active & {
+      display: block;
+    }
+
+    li,
+    a {
+      display: block;
+    }
+
+    a {
+      padding: .5rem;
+    }
+  }
+}
+
+.site-nav-toggle {
+  position: fixed;
+  top: 7.5rem;
+  left: 1rem;
+  z-index: 10000;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: $accent url('images/menu.svg') center center no-repeat;
+  background-size: 50% 50%;
+  overflow: hidden;
+  text-indent: -99999px;
+  border-radius: 9999rem;
+
+  .site-nav-active & {
+    background-image: url('images/close.svg');
+  }
+
+  @include breakpoint($m-up) {
+    display: none;
+  }
 }
 
 .content {
@@ -404,7 +450,7 @@ a {
     font-family: 'Friz Quadrata', sans-serif;
     font-size: 1.25rem;
     line-height: 1.05em;
-    text-align: center;
+    text-align: center !important;
     letter-spacing: -.02em;
     word-spacing: -.025em;
 
@@ -604,6 +650,11 @@ hr {
   border-top: .05em solid $main-color;
 }
 
+.credit {
+  font-size: .667rem;
+  line-height: 1.4em;
+}
+
 .schedule {
   margin: 1em 0;
   @include clearfix;
@@ -611,13 +662,17 @@ hr {
   a {
     clear: both;
     display: block;
-    border-top: .05em solid $main-color;
     background: none;
-    padding-bottom: 1em;
+    padding: 1em 0 1.2em;
     @include clearfix;
 
     .grid-view & {
       border-top: 0;
+    }
+
+    &:hover,
+    &:hover div {
+      color: $accent !important;
     }
   }
 
@@ -631,16 +686,26 @@ hr {
     margin-right: gutter();
   }
 
-  div {
+  .schedule-item-meta,
+  .schedule-item-main {
     float: left;
     margin-right: gutter();
 
-    .grid-view & {
-      margin-right: gutter(3 of 6);
-    }
-
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  &.arabic-text {
+    .schedule-item-meta,
+    .schedule-item-main {
+      float: right;
+      margin-left: gutter();
+      margin-right: 0;
+
+      &:last-child {
+        margin-left: 0;
+      }
     }
   }
 
@@ -653,37 +718,48 @@ hr {
     }
   }
 
-  .schedule-item-date,
-  .schedule-item-time {
-    width: span(6);
-
-    @include breakpoint($m-up) {
-      width: span(3);
-
-      .grid-view & {
-        width: span(3 of 6);
-      }
-    }
+  .schedule-item-meta {
+    width: span(4);
   }
 
-  .schedule-item-time {
-    @include breakpoint($s) {
-      margin-right: 0;
-    }
+  .schedule-item-main {
+    width: span(8);
+  }
 
-    .grid-view & {
-      margin-right: 0;
-    }
+  .schedule-item-time,
+  .schedule-item-people {
+    color: $main-color;
+  }
+
+  .schedule-item-date {
+    margin-top: 1rem;
+    color: $accent;
+    border-bottom: .05em solid $accent;
+  }
+
+  .schedule-item-type {
+    color: #226C47;
   }
 
   .schedule-item-title {
-    clear: both;
+    color: #0080FF;
   }
 }
 
+.schedule-item-type,
+.schedule-item-people {
+  clear: both;
+}
+
 .program-date,
-.program-time {
+.program-time,
+.program-type,
+.program-people {
   text-align: center;
+}
+
+.program-people {
+  margin-top: -.5em;
 }
 
 .views {
@@ -693,7 +769,7 @@ hr {
 
   .active {
     pointer-events: none;
-    background: none;
+    //background: none;
     text-decoration: line-through;
   }
 }

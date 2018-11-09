@@ -46,6 +46,16 @@ $(document).ready(function() {
     }
   });
 
+  $('.site-nav-toggle').click(function(e) {
+    e.preventDefault();
+
+    if ($('html').hasClass('site-nav-active')) {
+      $('html').removeClass('site-nav-active');
+    } else {
+      $('html').addClass('site-nav-active');
+    }
+  });
+
   setTimeout(function() {
     $('html').removeClass('loading');
   }, 120);

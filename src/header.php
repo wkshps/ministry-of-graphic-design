@@ -66,4 +66,5 @@
       ));
     ?>
   </nav>
+  <button class="site-nav-toggle">Menu</button>
   <div class="main">

@@ -4,6 +4,9 @@
   <div class="flipper flipper-content">
     <div class="front-content">
       <div class="content">
+        <?php if (get_field('type')): ?>
+          <div class="program-type"><?php the_field('type'); ?></div>
+        <?php endif; ?>
         <?php if (get_field('end_date')): ?>
           <?php
             $start_date = new DateTime(get_field('start_date'));
@@ -24,8 +27,12 @@
         <?php if (get_the_title() != 'Home'): ?>
           <h1 class="page-title <?php if (get_field('start_date')): ?>program-title<?php endif; ?>"><?php the_title(); ?></h1>
         <?php endif; ?>
+        <?php if (get_field('people')): ?>
+          <div class="program-people"><?php the_field('people'); ?></div>
+        <?php endif; ?>
         <?php the_content(); ?>
-        &nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+        <?php if (get_the_title() == 'Home'): ?><p class="credit">Graphic identity &amp; website by Eric Price &amp; Chris Wu at <a href="http://www.wkshps.com/">Wkshps</a></p><?php endif; ?>
+        &nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
       </div>
     </div>
 
@@ -51,7 +58,7 @@
           <h1 class="page-title <?php if (get_field('start_date')): ?>program-title<?php endif; ?>"><?php the_field('arabic_title'); ?></h1>
         <?php endif; ?>
         <?php the_field('arabic_text'); ?>
-        &nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
+        &nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;
       </div>
     </div>
   </div>
