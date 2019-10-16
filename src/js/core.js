@@ -2,6 +2,33 @@ var hasTouch = 'ontouchstart' in window,
     logo = Math.floor(Math.random() * 6) + 1,
     scrollPosition = 0;
 
+var grids = function() {
+  $('.grid').each(function() {
+    $grid = $(this).masonry({
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-item',
+      gutter: '.gutter-sizer',
+      percentPosition: true,
+    });
+
+    $grid.imagesLoaded().progress( function() {
+      $grid.masonry('layout');
+    });
+  });
+
+  setTimeout(function() {
+    $('.grid').masonry('layout');
+  }, 3000);
+
+  setTimeout(function() {
+    $('.grid').masonry('layout');
+  }, 6000);
+
+  setTimeout(function() {
+    $('.grid').masonry('layout');
+  }, 9000);
+};
+
 $(document).ready(function() {
   $('html').addClass('logo-' + logo);
 
@@ -55,6 +82,14 @@ $(document).ready(function() {
       $('html').addClass('site-nav-active');
     }
   });
+
+  $('.slideshow').slick({
+    infinite: true,
+    slidesToShow: 1,
+    adaptiveHeight: true
+  });
+
+  grids();
 
   setTimeout(function() {
     $('html').removeClass('loading');

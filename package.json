@@ -21,12 +21,17 @@
     "gulp-util": "^3.0.7",
     "js-cookie": "^2.2.0",
     "jshint": "^2.9.4",
+    "masonry-layout": "^4.2.2",
     "merge-stream": "^1.0.1",
     "rangeslider.js": "^2.3.2",
-    "require-dir": "^0.3.1"
+    "require-dir": "^0.3.1",
+    "slick-carousel": "^1.8.1"
   },
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
+    "flickity": "^2.2.0",
+    "imagesloaded": "^4.1.4",
+    "natives": "^1.1.6",
     "node-sass": "^4.7.2",
     "susy": "^3.0.3"
   }
