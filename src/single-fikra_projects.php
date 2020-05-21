@@ -30,13 +30,35 @@
 
         <?php if ($query->have_posts()): ?>
           <div class="participant-departments section">
-            <h2 class="sub-title">Department</h2>
+            <h2 class="sub-title">Departments</h2>
             <?php while ($query->have_posts()): $query->the_post(); ?>
               <?php if (has_post_thumbnail()): ?>
                 <div class="department-link"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                   <?php the_post_thumbnail('fikra_half'); ?>
                 </a></div>
               <?php endif; ?>
+            <?php endwhile; ?>
+          </div>
+        <?php endif; wp_reset_postdata(); ?>
+
+
+        <?php
+          $relationships = get_field('relationships', false, false);
+
+          $query = new WP_Query(array(
+            'post_type' => 'fikra_participants',
+            'post__in' => $relationships,
+            'posts_per_page' => -1
+          ));
+        ?>
+
+        <?php if ($query->have_posts()): ?>
+          <div class="participant-departments section">
+            <h2 class="sub-title">Participants</h2>
+            <?php while ($query->have_posts()): $query->the_post(); ?>
+              <div class="department-link"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                <?php the_title(); ?>
+              </a></div>
             <?php endwhile; ?>
           </div>
         <?php endif; wp_reset_postdata(); ?>

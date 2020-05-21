@@ -42,6 +42,7 @@ gulp.task('scripts-bundle', ['scripts-lint'], function() {
     modules + 'rangeslider.js/dist/rangeslider.js',
     modules + 'js-cookie/src/js.cookie.js',
     modules + 'masonry-layout/dist/masonry.pkgd.js',
+    modules + 'vanilla-fitvids/jquery.fitvids.js',
     src + 'js/core.js'
   ])
   .pipe(plugins.concat(project + '.min.js'))

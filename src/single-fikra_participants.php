@@ -63,7 +63,7 @@
     <div class="back-content">
       <div class="content arabic-text">
         <h1><?php the_field('arabic_title'); ?></h1>
-        <?php the_field('arabic_content'); ?>
+        <?php the_field('arabic_text'); ?>
 
         <?php
           $relationships = get_field('relationships', false, false);

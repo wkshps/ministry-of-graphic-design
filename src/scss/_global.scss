@@ -82,7 +82,7 @@ iframe {
 }
 
 iframe {
-  height: 60vh !important;
+  //height: 60vh !important;
 }
 
 a {
@@ -977,4 +977,8 @@ hr {
 }
 .slick-arrow.slick-hidden {
     display: none;
+}
+
+.fluid-width-video-wrapper iframe {
+  margin-bottom: 1rem;
 }
